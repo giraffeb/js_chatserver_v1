@@ -52,10 +52,7 @@ module.exports = function(current_dir_name){
     app.use(express.json());
     app.use(express.urlencoded());
     app.use(cookieparser());
-    app.use(function errorHandler(err, req, res, next){
-        console.log('we catch error handler');
-        console.log(err);
-    });
+    //쿠키로 로그인 확인하기.
     app.use(function(req,res,next){
         if(req.path === '/login'){
             console.log('req.path -> ', req.path);
@@ -79,6 +76,13 @@ module.exports = function(current_dir_name){
             }             
         }
     });
+
+    //에러 핸들러
+    app.use(function errorHandler(err, req, res, next){
+        console.log('we catch error handler');
+        console.log(err);
+    });
+
 
 
     app.post('/login', async function(req, res, next){
@@ -105,9 +109,6 @@ module.exports = function(current_dir_name){
 
             res.json(jwt);
         }
-        
-        //인증객체는 따로 만들어야 합니다. 지금은 세션으로 처리하게습니다.
-        //TODO: 
         
     });
 
