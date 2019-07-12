@@ -1,0 +1,34 @@
+
+article{
+    display: flex;
+}
+body>header>section.login_section{
+    -webkit-box-sizing: border-box;
+    border: solid black 2px;
+    padding: 5px;
+}
+
+body>article>section{
+    -webkit-box-sizing: border-box;
+    border: solid black 2px;
+    width: 400px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat_list{
+    flex: 1;
+    overflow: auto;
+}
+.chatinput_area{
+    -webkit-box-sizing: border-box;
+    border: solid black 2px;
+    height: 50px;
+}
+body>article>section.chat_area>.chatinput_area>textarea{
+    width:100%;
+    height: 100%;
+    -webkit-box-sizing: border-box;
+    resize: none;
+}

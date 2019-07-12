@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>hello</title>
+        <link type="text/css" rel="stylesheet" href="/static/css/main.css"/>
+    </head>
+    <body>
+        <h1>hello new world</h1>
+        <header>
+            <section class="user_info_area">
+
+            </section>
+        </header>
+        <article>
+            <section class="chatroom_list_area">
+                <h3>채팅방 목록</h3>
+                <ul class="chatroom_list"></ul>
+            </section>
+            <section class="chat_area">
+                <ul class="chat_list"></ul>
+                <div class="chatinput_area">
+                    <textarea></textarea>
+                </div>
+            </section>
+        </article>
+        <footer>
+            <section class="test">
+                <button class="getUserInfo">getUserInfo</button>
+                <button class="getChatRoomList">getChatRoomList</button>                
+                <button class="drawChatRoom">drawChatRoom</button>
+                <button class="createChatRoom">createChatRoom</button>
+            </section>
+        </footer>
+        <script src="/socket.io/socket.io.js"></script>
+        <script>
+          var socket = io();
+          
+        </script>
+        <!-- 소켓 이벤트 주고받기. -->
+        <script src="/static/js/message.js"></script>
+        <!-- 엘리먼트 생성 -->
+        <script src="/static/js//dom_event.js"></script>
+        <!-- 로그인 관련 js -->
+        <!-- <script src="/static/js/auth.js"></script>  -->
+        <!-- 테스트 버튼 이벤트 관리 -->
+        <script src="/static/js/test_btn.js"></script>
+        <!-- indexedDB 저장용 -->
+        <script src="/static/js/indexeddb.js"></script>
+        <script>
+            getUserInfo();
+            getChatRoomList();
+            drawUserInfo();
+        </script>
+    </body>
+</html>
